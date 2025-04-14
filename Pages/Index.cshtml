@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@{
+    List<string> favoriteFoods = new List<string> {"Ugali", "Sweet potatoes", "Matooke", "Bread"};
+}
+<div class="text-center">
+    <h1 class="display-5">Let's work with loops!</h1>
+    <br>
+
+    <h4>Results from your for loop:</h4>
+
+    <ul>
+        @for(int i= 0; i< favoriteFoods.Count; i++){
+            <li>@favoriteFoods[i]</li>
+        }
+    </ul>
+
+    <br>
+    <h4>Results from your foreach loop:</h4>
+    <ul>
+        @foreach(string favoriteFood in favoriteFoods){
+            <li>@favoriteFood</li>
+        }
+    </ul>
+    <br>
+    <h4>Results from your while loop:</h4>
+    <ul>
+        @{
+            int counter = 0;
+        }
+        @while(counter < favoriteFoods.Count){
+            <li>@favoriteFoods[counter++]</li>
+        }
+    </ul>
+</div>
